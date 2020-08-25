@@ -91,3 +91,11 @@ if __name__ == '__main__':
   
   # Calls main function  
   imputed_data, rmse = main(args)
+
+#  Hi, I am trying to reproduce your results. The RMSE of Spam, Letter, and Credit datasets are close but are way too off for Breast and News datasets. I have made the following 
+# changes into this code as suggested by the manuscript and the supplementary material.  
+# 1- Perform 5-fold cross-validation in each run, and repeat the experiments 10 times. Then take the mean RMSE and its std.
+# 2- G and D should comprise of 3 layers, with no. of nodes as d, d/2, and d, respectively.
+# 3- Node activations to be set as sigmoid (for output layer) and tanh (for all other layers).
+# 4- Value of alpha to be chosen from {0.1,0.5,1,2,10}
+# After making all these changes, the RMSE of Breast and News datasets is still off. Could you please suggest if I missed anything, or anything else to take care of.
